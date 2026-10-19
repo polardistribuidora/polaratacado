@@ -34,9 +34,13 @@
     @media(max-width:680px){.about-art img{height:270px}}
   </style>
   <style>
-    .product-image.brand-image{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;background:radial-gradient(ellipse at 50% 100%,rgba(246,198,65,.12),transparent 60%),linear-gradient(145deg,#202833,#11161d)}
-    .brand-image .brand-name{font:800 clamp(23px,2.3vw,31px)/1.05 Manrope,sans-serif;letter-spacing:-.045em;color:#f5f6f8}.brand-image .brand-variant{display:block;color:var(--gold);font:700 10px 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;margin-top:8px}.brand-image .brand-size{display:block;color:#a8b1bc;font-size:9px;margin-top:6px}.brand-image.red{background:linear-gradient(145deg,#851b1c,#291316)}.brand-image.green{background:linear-gradient(145deg,#164d35,#101a19)}.brand-image.blue{background:linear-gradient(145deg,#1c4267,#101722)}.brand-image.gold-tone{background:linear-gradient(145deg,#6b4b12,#171510)}
-    .brand-image .official-mark{display:block;width:min(82%,220px);height:68px;object-fit:contain;padding:10px 13px;margin:0 auto 3px;border-radius:4px;background:rgba(255,255,255,.96)}.brand-image .official-mark[hidden]{display:none}.brand-image .brand-name.mark-loaded{display:none}
+    .product-image.brand-image{--brand-accent:#d9a923;--brand-ink:#202a35;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:0;padding:17px 15px 12px;border-bottom:3px solid var(--brand-accent);background:radial-gradient(ellipse at 50% 100%,rgba(246,198,65,.13),transparent 60%),linear-gradient(145deg,#202833,#11161d)}
+    .brand-image:before{content:"";position:absolute;z-index:0;top:calc(50% - 43px);left:17px;right:17px;height:74px;border:1px solid rgba(16,24,32,.08);border-radius:9px;background:linear-gradient(145deg,#fff,#f3f5f7);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+    .brand-image .tag{z-index:3}.brand-image .brand-name{position:relative;z-index:2;display:block;max-width:100%;font:800 clamp(18px,2.1vw,27px)/1.05 Manrope,sans-serif;letter-spacing:-.045em;color:var(--brand-ink)}.brand-image .brand-variant{position:relative;z-index:2;display:block;color:var(--brand-accent);font:700 10px 'DM Sans',sans-serif;letter-spacing:.13em;text-transform:uppercase;margin-top:11px}.brand-image .brand-size{position:relative;z-index:2;display:block;color:#b8c2ce;font-size:9px;margin-top:5px}
+    .brand-image.red{background:linear-gradient(145deg,#851b1c,#291316)}.brand-image.green{background:linear-gradient(145deg,#164d35,#101a19)}.brand-image.blue{background:linear-gradient(145deg,#1c4267,#101722)}.brand-image.gold-tone{background:linear-gradient(145deg,#6b4b12,#171510)}
+    .brand-image .official-mark{position:relative;z-index:2;display:block;width:min(76%,220px);height:68px;object-fit:contain;padding:0;margin:0 auto 3px;border-radius:0;background:transparent}.brand-image .official-mark[hidden]{display:none}.brand-image .brand-name.mark-loaded{display:none}
+    .product[data-name*="brahma"] .brand-image{--brand-accent:#d92734;--brand-ink:#bd1826}.product[data-name*="original"] .brand-image{--brand-accent:#d2a03a;--brand-ink:#203448}.product[data-name*="skol"] .brand-image{--brand-accent:#f2c42d;--brand-ink:#d71e2b}.product[data-name*="heineken"] .brand-image{--brand-accent:#00a653;--brand-ink:#087342}.product[data-name*="amstel"] .brand-image{--brand-accent:#e32636;--brand-ink:#b41725}.product[data-name*="corona"] .brand-image{--brand-accent:#d2a93c;--brand-ink:#17477b}.product[data-name*="johnnie walker"] .brand-image{--brand-accent:#d3a22e;--brand-ink:#222}.product[data-name*="tanqueray"] .brand-image{--brand-accent:#17914c;--brand-ink:#075d35}.product[data-name*="casillero"] .brand-image{--brand-accent:#a42435;--brand-ink:#4c1724}.product[data-name*="coca-cola"] .brand-image{--brand-accent:#ed1c2e;--brand-ink:#d7192d}.product[data-name*="fanta"] .brand-image{--brand-accent:#f27a21;--brand-ink:#e86a16}.product[data-name*="sprite"] .brand-image{--brand-accent:#11a552;--brand-ink:#087847}.product[data-name*="guaraná"] .brand-image{--brand-accent:#2c8a47;--brand-ink:#257443}.product[data-name*="red bull"] .brand-image{--brand-accent:#df1f2d;--brand-ink:#16375e}
+    @media(max-width:680px){.brand-image:before{top:calc(50% - 34px);left:12px;right:12px;height:58px}.brand-image .official-mark{height:53px}.brand-image .brand-name{font-size:clamp(16px,4.4vw,22px)}.brand-image .brand-variant{font-size:8px;letter-spacing:.1em;margin-top:9px}.brand-image .brand-size{font-size:8px}}
     .product-info .product-source{display:block;color:#91a0ae;font-size:9px;text-decoration:underline;text-underline-offset:3px;margin:0 0 11px}.availability-note{grid-column:1/-1;border:1px solid var(--line);border-radius:6px;background:#11161d;padding:14px 16px;color:#9faab6;font-size:11px}.availability-note strong{color:var(--gold)}
   </style>
 </head>
@@ -132,6 +136,11 @@
         alt: 'Logotipo oficial Brahma'
       },
       {
+        match: 'cerveja skol',
+        source: 'https://ri.ambev.com.br/wp-content/uploads/sites/210/2020/07/amb05_20190903.jpg',
+        alt: 'Logotipo oficial Skol'
+      },
+      {
         match: 'cerveja heineken',
         source: 'https://cms.heinekenbrasil.com.br/media/ch1j1dan/logofooter.svg',
         alt: 'Logotipo oficial Heineken'
@@ -145,6 +154,16 @@
         match: 'refrigerante fanta',
         source: 'https://www.coca-cola.com/content/dam/onexp/br/pt/offerings/fanta-ccxp/logofantanuevo.svg',
         alt: 'Logotipo oficial Fanta'
+      },
+      {
+        match: 'refrigerante sprite',
+        source: 'https://www.coca-cola.com/content/dam/onexp/br/pt/brands/sprite/sprite_logo_180x180.png',
+        alt: 'Logotipo oficial Sprite'
+      },
+      {
+        match: 'refrigerante guaraná',
+        source: 'https://ri.ambev.com.br/wp-content/uploads/sites/210/2020/07/amb07_20190903.jpg',
+        alt: 'Logotipo oficial Guaraná Antarctica'
       }
     ];
     products.forEach((product) => {
@@ -156,6 +175,7 @@
       logo.className = 'official-mark';
       logo.alt = mark.alt;
       logo.loading = 'lazy';
+      logo.decoding = 'async';
       logo.addEventListener('load', () => fallback.classList.add('mark-loaded'), { once: true });
       logo.addEventListener('error', () => logo.remove(), { once: true });
       logo.src = mark.source;
@@ -184,3 +204,4 @@
   </script>
 </body>
 </html>
+
