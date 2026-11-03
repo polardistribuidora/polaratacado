@@ -38,9 +38,9 @@
     .equipment-grid{gap:18px}
     .equipment-card{border-color:#e6e9ee;border-radius:14px;box-shadow:0 10px 28px rgba(17,24,39,.08)}
     .equipment-card:hover{border-color:#e6b8ba;box-shadow:0 16px 34px rgba(17,24,39,.13)}
-    .equipment-photo{height:248px;padding:24px;background:radial-gradient(ellipse at 50% 42%,#fff 0,#f8f9fb 58%,#edf0f4 100%)}
+    .equipment-photo{height:248px;padding:24px;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#fff 0,#f8f9fb 58%,#edf0f4 100%)}
     .equipment-photo:after{content:"";position:absolute;inset:12px;border:1px solid rgba(28,36,48,.06);border-radius:8px;pointer-events:none}
-    .equipment-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center;mix-blend-mode:multiply;filter:drop-shadow(0 10px 9px rgba(16,24,40,.12))}
+    .equipment-photo img{position:relative;z-index:1;width:100%;height:100%;min-width:0;min-height:0;max-width:100%;max-height:100%;object-fit:contain;object-position:center;mix-blend-mode:multiply;filter:drop-shadow(0 10px 9px rgba(16,24,40,.12))}
     .photo-tag{z-index:2;left:18px;top:18px;padding:6px 9px;border-radius:999px;background:#211416;font-size:9px;letter-spacing:.04em}
     .equipment-body{min-height:173px;padding:17px}.brand-preview{background:#fff1f1;color:#a90f19}
     .equipment-body h3{font-size:16px}.equipment-body p{min-height:34px;font-size:11px}
